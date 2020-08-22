@@ -1,0 +1,18 @@
+extends ../template/usercommon.pug
+
+block main
+    div.d-flex.flex-column.text-center
+        h1 LOGIN
+
+        if errors
+            each error in errors
+                li= error
+
+        form.form-horizontal.d-flex.flex-column(method="post")
+            .form-group
+                label(for="email") Email:
+                input#email.form-control.w-50.m-auto(type="text", name="email", value=values ? values.email : "")
+            .form-group
+                label(for="password") Password:
+                input#password.form-control.w-50.m-auto(type="password", name="password", value=values ? values.password : "")
+            button.btn.btn-primary.m-auto(type='submit') CREATE 

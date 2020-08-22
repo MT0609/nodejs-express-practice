@@ -1,0 +1,21 @@
+extends ./template/usercommon.pug
+
+block static file
+    link(rel="stylesheet", type="text/css", href="css/index.css")
+
+block main
+    div.container
+        h1 USER
+
+        if username
+            div HELLO #{username}
+            a(href='/users/clear') LOG OUT
+        else
+            div 
+                a(href='/auth/login') LOG IN
+
+        div 
+            a(href='/users') view users
+
+        div
+            a(href='/users/create') create user    <link rel="stylesheet" type="text/css" href="style/info.css" />

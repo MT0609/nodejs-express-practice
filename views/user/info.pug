@@ -1,0 +1,11 @@
+extends ../template/usercommon.pug
+
+block main
+    h1 USER INFO
+
+    if user
+        p Name: #{user.name}
+        p Email: #{user.email}
+        p Phone: #{user.phone}
+    else
+        div user not found

@@ -1,0 +1,10 @@
+extends ./template/usercommon.pug
+
+block static file
+    link(rel="stylesheet", type="text/css", href="css/404.css")
+
+block main
+    .container
+        h2 Oops! Page not found.
+        h1 404
+        a(href='/') BACK TO HOME

@@ -1,0 +1,25 @@
+extends ../template/usercommon.pug
+
+block main
+    div.d-flex.flex-column.text-center
+        if username
+            h1 HELLO #{username}
+        else
+            h1 USERS
+
+        form.d-flex.flex-column(action='/users/search', method='get')
+            .form-group
+                input.form-control.w-50.m-auto(type='text', placeholder='Search username...' name='q')
+            button.btn.btn-primary.m-auto(type='submit') SEARCH 
+
+
+        ul.text-left
+            each user in users
+                li 
+                    p #{user.name}
+                    p
+                        a(href=('/users/' + user._id)) View 
+                        span &nbsp
+                        a(href='/users/delete?user=' + user._id) Delete
+            else
+                div No users found
